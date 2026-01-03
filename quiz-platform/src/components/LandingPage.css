@@ -1,0 +1,28 @@
+.landing-page {
+  text-align: center;
+  padding: 50px;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+} 

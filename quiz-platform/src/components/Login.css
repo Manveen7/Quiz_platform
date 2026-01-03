@@ -1,0 +1,88 @@
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  width: 800px;
+  height: 400px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.left {
+  flex: 1;
+  background-color: #f7f7f7;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.eula {
+  font-size: 12px;
+  text-align: center;
+  color: #888;
+}
+
+.right {
+  flex: 1;
+  position: relative;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.form {
+  width: 100%;
+  max-width: 300px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form input[type="submit"]:hover {
+  background-color: #0056b3;
+} 
