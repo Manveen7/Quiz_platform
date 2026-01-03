@@ -1,12 +1,107 @@
-# React + Vite
+# UM Quiz Platform 🧠
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**A simple quiz platform** with a Node/Express backend and a React + Vite frontend. This README explains how to set up and run the project locally.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✅ Quick Start
 
-## Expanding the ESLint configuration
+Prerequisites:
+- Node.js (v16+ recommended)
+- MongoDB (local or Atlas)
+- Git (to clone the repo)
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd UM_Quiz
+```
+
+2. Backend: install dependencies and create env file
+
+```bash
+cd quiz-app-backend
+npm install
+# Create a .env file (see .env.example)
+# PowerShell: cp .env.example .env
+# CMD: copy .env.example .env
+```
+
+3. Start the backend:
+
+```bash
+# Development (auto-restart):
+npm run dev
+# Production:
+npm start
+```
+
+4. Frontend: install and run
+
+```bash
+cd ../quiz-platform
+npm install
+npm run dev
+```
+
+Open the frontend at http://localhost:5173 and the backend runs on http://localhost:5000 by default.
+
+---
+
+## 🔧 Environment variables (backend)
+
+Create `quiz-app-backend/.env` with these values (you can copy `.env.example`):
+
+```
+MONGO_URI=<your-mongo-connection-string>
+JWT_SECRET=<a-strong-secret>
+PORT=5000  # optional
+```
+
+> Note: Keep `JWT_SECRET` secure in production.
+
+---
+
+## 🗂️ Project Structure (top-level)
+
+- `quiz-app-backend/` - Node/Express backend (MongoDB, JWT-based auth)
+- `quiz-platform/` - React + Vite frontend
+- `dashboard.css` - some shared styles
+
+---
+
+## 🔁 Typical Workflow
+
+- Edit frontend in `quiz-platform/src/` and backend in `quiz-app-backend/`.
+- Backend API base: `http://localhost:5000/api/...` (used by frontend axios calls)
+
+If you run the backend on a different port, update frontend calls (they are hardcoded to `http://localhost:5000` in several components like `src/components/*.jsx`).
+
+---
+
+## 🐞 Troubleshooting
+
+- MongoDB connection errors: verify `MONGO_URI` and that MongoDB is reachable (try connecting with MongoDB Compass or `mongosh`).
+- CORS / network errors: ensure backend is running and port matches frontend API URLs.
+- Port conflicts: change `PORT` in backend `.env` and update frontend URLs if needed.
+
+---
+
+## 💡 Tips & Next Steps
+
+- Add an `.env.example` file (already included for backend) — do not commit secrets.
+- Consider adding a frontend configuration for API base URL (e.g., use `.env` or a `src/config.js`).
+- Add tests and CI for improved reliability.
+
+---
+
+## 👩‍💻 Contributing
+
+Feel free to open issues or PRs. Keep changes focused and include a short description of what you changed and why.
+
+---
+
+## 📜 License
+
+This project currently has no license file. Add a license as needed.
